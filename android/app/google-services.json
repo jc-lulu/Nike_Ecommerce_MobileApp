@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "701818395387",
+    "project_id": "nikeapp-dee31",
+    "storage_bucket": "nikeapp-dee31.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:701818395387:android:0ddaf4fc865488a85e2e5e",
+        "android_client_info": {
+          "package_name": "com.niekapp.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "701818395387-var5512hldi7lapil82mv6822qqne55c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxtMyNnxQNQ0FjPAKWLRl1zRPRDK9Yl1g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "701818395387-var5512hldi7lapil82mv6822qqne55c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
