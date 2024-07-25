@@ -62,13 +62,13 @@ class _MyLoginPageState extends State<MyLoginPage> {
   }
 
   _signInWithGoogle() async {
-    final GoogleSignIn _googleSignIn = GoogleSignIn(
+    final GoogleSignIn googleSignIn = GoogleSignIn(
         clientId:
             '701818395387-var5512hldi7lapil82mv6822qqne55c.apps.googleusercontent.com');
 
     try {
       final GoogleSignInAccount? googleSignInAccount =
-          await _googleSignIn.signIn();
+          await googleSignIn.signIn();
 
       if (googleSignInAccount != null) {
         final GoogleSignInAuthentication googleSignInAuthentication =
@@ -84,6 +84,7 @@ class _MyLoginPageState extends State<MyLoginPage> {
         String email = userCredential.user?.email ?? "";
         await _accountPreferences.saveAccountData(email: email);
         Navigator.pushReplacement(
+          // ignore: use_build_context_synchronously
           context,
           MaterialPageRoute(
             builder: (context) => MyHomePage(email: email),

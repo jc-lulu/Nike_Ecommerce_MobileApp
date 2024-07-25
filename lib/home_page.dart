@@ -291,6 +291,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     // Navigate to the login page
     Navigator.pushAndRemoveUntil(
+      // ignore: use_build_context_synchronously
       context,
       MaterialPageRoute(
         builder: (context) => const MyLoginPage(),
@@ -712,8 +713,12 @@ class _MyLikesState extends State<MyLikes> {
                         top: 1,
                         child: IconButton(
                           icon: const Icon(Icons.delete),
-                          onPressed: () => _unlike(shoe),
+                          onPressed:() {
+                            _unlike(shoe);
+
+                          },
                         ),
+                        
                       ),
                     ],
                   ),
