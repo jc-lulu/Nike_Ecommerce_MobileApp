@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 class FirebaseAuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
+  static User? user = FirebaseAuth.instance.currentUser;
 
   Future<User?> signUpWithEmailAndPassword(BuildContext context, String email,
       String password, String cpassword) async {
