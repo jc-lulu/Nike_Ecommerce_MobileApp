@@ -37,31 +37,25 @@ class _MyLoginPageState extends State<MyLoginPage> {
       _isLoading = true;
     });
 
-    // Simulate a login delay
     await Future.delayed(const Duration(seconds: 2));
 
-    // Retrieve user inputs
     final String userEmail = _emailController.text;
     final String userPassword = _passwordController.text;
 
-    // Here you should validate the user credentials
     if (_validateCredentials(userEmail, userPassword)) {
-      // Store login status and email in SharedPreferences
       SharedPreferences prefs = await SharedPreferences.getInstance();
       await prefs.setBool('isLoggedIn', true);
       await prefs.setString('email', userEmail);
 
-      // Navigate to MyHomePage with the user's email
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
           builder: (context) => MyHomePage(
-            email: userEmail, // Pass the email here
+            email: userEmail,
           ),
         ),
       );
     } else {
-      // Show error if credentials are invalid
       showDialog(
         context: context,
         builder: (context) => AlertDialog(
@@ -82,9 +76,7 @@ class _MyLoginPageState extends State<MyLoginPage> {
     });
   }
 
-  // Simulated credential validation function
   bool _validateCredentials(String email, String password) {
-    // For demo purposes, any non-empty credentials are considered valid
     return email.isNotEmpty && password.isNotEmpty;
   }
 
@@ -111,9 +103,7 @@ class _MyLoginPageState extends State<MyLoginPage> {
           print("User is successfully signed in");
           Navigator.push(
             context,
-            MaterialPageRoute(
-                builder: (context) =>
-                    MyHomePage(email: email)), // Pass the email to MyHomePage
+            MaterialPageRoute(builder: (context) => MyHomePage(email: email)),
           );
         } else {
           _showDialog();
@@ -306,7 +296,7 @@ class _MyLoginPageState extends State<MyLoginPage> {
                   ElevatedButton.icon(
                     onPressed: _signInWithGoogle,
                     icon: Image.asset(
-                      'assets/gicon.png', // Make sure to add your Google logo image to the assets folder
+                      'assets/gicon.png',
                       height: 24,
                     ),
                     label: const Text(
